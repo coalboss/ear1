@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The proposed First Embodied Audition and Reasoning (EAR-1) Challenge for ICASSP 2027.">
+  <meta name="theme-color" content="#171a1d">
+  <title>EAR-1 Challenge | ICASSP 2027</title>
+  <link rel="icon" href="assets/ear1-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="EAR-1 home">
+        <img src="assets/ear1-mark.svg" alt="" width="28" height="36">
+        <span>EAR-1</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-icon" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span>Menu</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#organizers">Organizers</a>
+        <a class="nav-register" href="https://forms.gle/oBDTLZCdumpGLzpCA" target="_blank" rel="noreferrer">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero">
+      <div class="hero-shell">
+        <p class="eyebrow">Proposed ICASSP 2027 Signal Processing Grand Challenge</p>
+        <img class="hero-logo" src="assets/ear1-logo.svg" alt="EAR-1" width="620" height="240">
+        <h1>The First Embodied Audition and Reasoning Challenge</h1>
+        <p class="theme-line">Embodied Speech Perception under Oracle Navigation in Multi-Party Conversations</p>
+        <p class="hero-copy">
+          EAR-1 asks a foundational question: if navigation is executed correctly, to what extent can movement itself improve multi-party speech perception?
+        </p>
+        <p class="status-notice"><strong>Proposal status:</strong> EAR-1 is currently under review for inclusion in the ICASSP 2027 Grand Challenge program. Challenge details and dates are subject to approval.</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://forms.gle/oBDTLZCdumpGLzpCA" target="_blank" rel="noreferrer">Register for EAR-1</a>
+          <a class="button button-secondary" href="assets/cfp_ear1.pdf">Download the CFP</a>
+        </div>
+
+        <dl class="hero-facts" aria-label="Challenge summary">
+          <div>
+            <dt>50+ h</dt>
+            <dd>paired audio</dd>
+          </div>
+          <div>
+            <dt>38</dt>
+            <dd>sessions</dd>
+          </div>
+          <div>
+            <dt>16</dt>
+            <dd>rooms</dd>
+          </div>
+          <div>
+            <dt>2</dt>
+            <dd>core tasks</dd>
+          </div>
+          <div>
+            <dt>4</dt>
+            <dd>leaderboards</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="scene-band" aria-labelledby="scene-heading">
+      <div class="section-shell">
+        <div class="section-heading compact-heading">
+          <p class="section-index">Recording paradigm</p>
+          <h2 id="scene-heading">One conversation, two acoustic viewpoints</h2>
+        </div>
+        <figure class="scene-figure">
+          <img src="assets/scene.png" alt="Paired fixed and moving microphone arrays recording the same multi-party conversation under oracle navigation." width="1828" height="800">
+          <figcaption>
+            Paired fixed and mobile recordings support controlled analysis of the acoustic value of movement for speaker diarization and speech recognition.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="overview" class="overview-band">
+      <div class="section-shell overview-grid">
+        <div>
+          <p class="section-index light-index">Scientific motivation</p>
+          <h2>Is a better acoustic viewpoint itself valuable?</h2>
+        </div>
+        <div class="overview-copy">
+          <p>
+            Fixed far-field systems are vulnerable to distance, background noise, reverberation, and overlapping speech. Embodied devices can rotate toward active speakers or approach sound sources, potentially improving direct-to-reverberant ratio and spatial separability.
+          </p>
+          <p>
+            Movement also introduces self-noise and rapidly varying acoustic transfer functions. EAR-1 isolates this trade-off by using a human proxy to execute a predefined oracle-navigation policy, while participating systems receive only multi-channel audio.
+          </p>
+          <blockquote>
+            Navigation is controlled. Speech perception remains the challenge.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="tasks" class="content-section">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-index">Challenge tracks</p>
+          <h2>Two tasks, paired fixed and moving conditions</h2>
+          <p>
+            Each task is evaluated separately on synchronized Fixed-Array and Moving-Array recordings of the same conversations.
+          </p>
+        </div>
+
+        <div class="task-grid">
+          <article class="task-card">
+            <div class="task-number">01</div>
+            <p class="task-code">ESD-ON</p>
+            <h3>Embodied Speaker Diarization with Oracle Navigation</h3>
+            <p>
+              Assign consistent speaker labels to continuous multi-channel recordings, including regions with overlapping speech. Oracle voice activity detection regions are provided without revealing active-speaker identities.
+            </p>
+            <div class="task-meta">
+              <span><strong>Metric</strong> DER</span>
+              <span><strong>Input</strong> Audio + oracle VAD</span>
+            </div>
+            <div class="track-list" aria-label="ESD-ON tracks">
+              <span>Fixed-Array Track</span>
+              <span>Moving-Array Track</span>
+            </div>
+          </article>
+
+          <article class="task-card task-card-accent">
+            <div class="task-number">02</div>
+            <p class="task-code">ESR-ON</p>
+            <h3>Embodied Speech Recognition with Oracle Navigation</h3>
+            <p>
+              Generate speaker-attributed transcripts from continuous, unsegmented multi-channel recordings. Systems jointly handle speech activity detection, speaker attribution, and recognition.
+            </p>
+            <div class="task-meta">
+              <span><strong>Metric</strong> cpWER</span>
+              <span><strong>Input</strong> Continuous audio</span>
+            </div>
+            <div class="track-list" aria-label="ESR-ON tracks">
+              <span>Fixed-Array Track</span>
+              <span>Moving-Array Track</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dataset" class="data-band">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-index">Dataset</p>
+          <h2>Real, paired, and disjoint by room and speaker</h2>
+          <p>
+            The reported duration is underlying conversation time, not the sum of fixed and moving recordings. Training, development, and evaluation partitions use disjoint rooms and speakers.
+          </p>
+        </div>
+
+        <div class="data-layout">
+          <div class="table-wrap">
+            <table>
+              <caption>Preliminary EAR-1 corpus statistics</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Dataset</th>
+                  <th scope="col">Train</th>
+                  <th scope="col">Dev</th>
+                  <th scope="col">Eval</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Duration (h)</th><td>46</td><td>2</td><td>2</td><td>50</td></tr>
+                <tr><th scope="row">Sessions</th><td>33</td><td>2</td><td>3</td><td>38</td></tr>
+                <tr><th scope="row">Rooms</th><td>12</td><td>2</td><td>2</td><td>16</td></tr>
+                <tr><th scope="row">Participants</th><td>95</td><td>8</td><td>12</td><td>115</td></tr>
+                <tr><th scope="row">Male</th><td>48</td><td>4</td><td>6</td><td>58</td></tr>
+                <tr><th scope="row">Female</th><td>47</td><td>4</td><td>6</td><td>57</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="data-notes">
+            <h3>What participants receive</h3>
+            <ul class="check-list">
+              <li>Synchronized fixed-array and moving-array multi-channel audio</li>
+              <li>Speaker activity and attributed transcripts for train and development</li>
+              <li>Oracle VAD regions for ESD-ON, including evaluation</li>
+              <li>Official formats, scoring scripts, baselines, and evaluation configurations</li>
+            </ul>
+
+            <h3>What remains hidden</h3>
+            <ul class="plain-list">
+              <li>Navigation trajectories and device poses</li>
+              <li>Video, inertial signals, and close-talking audio</li>
+              <li>Evaluation speaker labels and reference transcripts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evaluation" class="content-section">
+      <div class="section-shell evaluation-grid">
+        <div class="section-heading">
+          <p class="section-index">Evaluation</p>
+          <h2>Transparent metrics and separate rankings</h2>
+          <p>
+            Fixed and moving conditions use the same protocols and are ranked independently, enabling controlled within-conversation comparison.
+          </p>
+        </div>
+
+        <div class="metric-list">
+          <article class="metric-row">
+            <div class="metric-name">DER</div>
+            <div>
+              <h3>Speaker diarization</h3>
+              <p>Zero forgiveness collar. Overlapping speech is scored. With oracle VAD, the metric mainly reflects speaker confusion and overlap attribution.</p>
+            </div>
+          </article>
+          <article class="metric-row">
+            <div class="metric-name metric-name-coral">cpWER</div>
+            <div>
+              <h3>Speaker-attributed recognition</h3>
+              <p>Speaker-wise hypotheses are concatenated in time and scored under the minimum-error mapping between reference and hypothesized speakers.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule-band">
+      <div class="section-shell">
+        <div class="section-heading schedule-heading">
+          <p class="section-index light-index">Schedule</p>
+          <h2>EAR-1 timeline</h2>
+          <p>All deadlines use Anywhere on Earth unless otherwise announced.</p>
+        </div>
+
+        <ol class="timeline">
+          <li>
+            <time datetime="2026-08-14">Aug. 14, 2026</time>
+            <span>Website, rules, and registration open</span>
+          </li>
+          <li class="timeline-major">
+            <time datetime="2026-09-15">Sep. 15, 2026</time>
+            <span>Training/development data and baseline systems released</span>
+          </li>
+          <li>
+            <time datetime="2026-10-14">Oct. 14, 2026</time>
+            <span>Development leaderboard opens</span>
+          </li>
+          <li class="timeline-major">
+            <time datetime="2026-11-16">Nov. 16, 2026</time>
+            <span>Evaluation data released</span>
+          </li>
+          <li>
+            <time datetime="2026-12-07">Dec. 7, 2026</time>
+            <span>Final system outputs due</span>
+          </li>
+          <li>
+            <time datetime="2026-12-14">Dec. 14, 2026</time>
+            <span>System-description reports due</span>
+          </li>
+          <li class="timeline-major">
+            <time datetime="2026-12-18">Dec. 18, 2026</time>
+            <span>Final rankings and top-team invitations announced</span>
+          </li>
+          <li>
+            <time datetime="2027-01-07">Jan. 7, 2027</time>
+            <span>Invited 2-page papers due</span>
+          </li>
+          <li>
+            <time datetime="2027-01-21">Jan. 21, 2027</time>
+            <span>Paper acceptance notification</span>
+          </li>
+          <li>
+            <time datetime="2027-01-28">Jan. 28, 2027</time>
+            <span>Camera-ready 2-page papers due</span>
+          </li>
+          <li class="timeline-conference">
+            <time datetime="2027-05-16">May 16-21, 2027</time>
+            <span>EAR-1 session at ICASSP 2027 in Toronto, Canada</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="rules" class="content-section">
+      <div class="section-shell rules-layout">
+        <div class="section-heading">
+          <p class="section-index">Participation</p>
+          <h2>Core rules</h2>
+        </div>
+        <div class="rules-list">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>External resources</h3>
+              <p>Public datasets and pretrained models are allowed when cited, accessible to other teams, and fully disclosed. New resources cannot be introduced after evaluation data release.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Permitted inputs</h3>
+              <p>Systems may use only the officially released audio and task metadata. Trajectories, poses, auxiliary sensors, and organizer-only annotations are prohibited.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Final submission</h3>
+              <p>Each entry includes outputs in the official format and a report describing architecture, training, external resources, and decoding configuration.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="organizers" class="organizer-band">
+      <div class="section-shell">
+        <div class="section-heading">
+          <p class="section-index">Organizing team</p>
+          <h2>EAR-1 organizers</h2>
+        </div>
+        <div class="organizer-grid">
+          <article><h3>Hang Chen</h3><p>USTC, China</p></article>
+          <article><h3>Jun Du</h3><p>USTC, China</p></article>
+          <article><h3>Mengyao Zhu</h3><p>Soochow University, China</p></article>
+          <article><h3>Hui Bu</h3><p>AISHELL, China</p></article>
+          <article><h3>Xin Xu</h3><p>AISHELL, China</p></article>
+          <article><h3>Sabato Marco Siniscalchi</h3><p>University of Palermo, Italy</p></article>
+          <article><h3>Kai Chen</h3><p>DeepCybo, China</p></article>
+          <article><h3>Jia Pan</h3><p>iFLYTEK, China</p></article>
+          <article><h3>Yanhui Tu</h3><p>Anhui University, China</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band">
+      <div class="section-shell contact-layout">
+        <div>
+          <p class="section-index light-index">Join the challenge</p>
+          <h2>Study what movement adds to speech perception.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-light" href="https://forms.gle/oBDTLZCdumpGLzpCA" target="_blank" rel="noreferrer">Register for EAR-1</a>
+          <a class="contact-email" href="mailto:mispchallenge@gmail.com">mispchallenge@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-layout">
+      <div class="footer-brand">
+        <img src="assets/ear1-mark.svg" alt="" width="30" height="40">
+        <span>EAR-1 Challenge</span>
+      </div>
+      <p>Proposed ICASSP 2027 Signal Processing Grand Challenge</p>
+      <div class="footer-links">
+        <a href="assets/cfp_ear1.pdf">CFP</a>
+        <a href="https://forms.gle/oBDTLZCdumpGLzpCA" target="_blank" rel="noreferrer">Registration</a>
+        <a href="mailto:mispchallenge@gmail.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
